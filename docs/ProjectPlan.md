@@ -1,7 +1,7 @@
 ## Team Structure and Role Assignments
--**Implementation Lead/s:** Jose, Gustavo
--**Verification Lead:** Ben
--**Communication Lead:** Alain
+- **Implementation Lead/s:** Jose, Gustavo
+- **Verification Lead:** Ben
+- **Communication Lead:** Alain
 
 #Part 1
 |Task|Owner|Evidence|

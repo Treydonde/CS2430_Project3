@@ -20,7 +20,8 @@
 |Compute total weight and rating|Gustavo|-|
 |Compute highest rated|-|-|
 
-#Part 3 Change Request
+#Part 3 
+Change Request
 TBD
 |Task|Owner|Evidence|
 |-|-|-|
@@ -29,3 +30,44 @@ TBD
 
 
 
+---
+
+## Milestone Checklist
+
+- [x] **Task 1: Repository Setup & Workflow**
+  - **Status:** Done
+  - **Assigned To:** Alain
+  - **Evidence:** GitHub repository initialized
+
+- [x] **Task 2: UML file **
+  - **Status:** Working
+  - **Assigned To:** Ben
+  - **Evidence:** Commit ()
+    
+- [x] **Task 3: Implement part 1**
+  - **Status:** Working
+  - **Assigned To:** Everyone
+  - **Evidence:** File: src/main.py
+     
+- [x] **Task 4: Brute Force Method**
+  - **Status:** Working...
+  - **Assigned To:** Gustavo
+  - **Evidence:** N/A
+
+- [x] **Task 5: Create report**
+  - **Status:** Pending...
+  - **Assigned To:** Alain
+  - **Evidence:** N/A
+
+- [x] **Task 6: Create video**
+  - **Status:** Pending...
+  - **Assigned To:** All
+  - **Evidence:** N/A
+     
+- [] **Task 7: Gather all submission documents required**
+  - **Status:** Pending...
+  - **Assigned To:** Unknown
+  - **Evidence:** N/A
+
+
+---

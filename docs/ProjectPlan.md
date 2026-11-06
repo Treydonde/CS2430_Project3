@@ -1,4 +1,7 @@
 #Part 1
+Implementation Lead/s: Jose, Gustavo
+Verification Lead: Ben
+Communication Lead: Alain
 
 |Task|Owner|Evidence|
 |-|-|-|
@@ -16,8 +19,8 @@
 |Compute total weight and rating|Gustavo|-|
 |Compute highest rated|-|-|
 
-#Part 3
-
+#Part 3 Change Request
+TBD
 |Task|Owner|Evidence|
 |-|-|-|
 |-|-|-|

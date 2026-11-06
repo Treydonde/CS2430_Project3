@@ -16,9 +16,9 @@
 
 |Task|Owner|Evidence|
 |-|-|-|
-|Permutation Generator|Gustavo|-|
-|Compute total weight and rating|Gustavo|-|
-|Compute highest rated|-|-|
+|Permutation Generator|Gustavo|[Commit 2179cdb](https://github.com/Treydonde/CS2430_Project3/commit/2179cdbe86cc88afff9ec11b344db2d69954477e)|
+|Compute total weight and rating|Gustavo|[Commit 2179cdb](https://github.com/Treydonde/CS2430_Project3/commit/2179cdbe86cc88afff9ec11b344db2d69954477e)|
+|Compute highest rated|Gustavo|[Commit 2179cdb](https://github.com/Treydonde/CS2430_Project3/commit/2179cdbe86cc88afff9ec11b344db2d69954477e)|
 
 #Part 3 
 Change Request
@@ -43,6 +43,11 @@ TBD
   - **Status:** Working
   - **Assigned To:** Ben
   - **Evidence:** Commit ()
+     
+- [x] **Task 2.5: Pseudo-Code**
+  - **Status:** Working
+  - **Assigned To:** Gustavo
+  - **Evidence:** Commit ()
     
 - [x] **Task 3: Implement Greedy Strategies**
   - **Status:** Working
@@ -50,9 +55,9 @@ TBD
   - **Evidence:** File: src/main.py
      
 - [x] **Task 4: Brute Force Method**
-  - **Status:** Working...
+  - **Status:** Completed
   - **Assigned To:** Gustavo
-  - **Evidence:** N/A
+  - **Evidence:** [Commit 2179cdb](https://github.com/Treydonde/CS2430_Project3/commit/2179cdbe86cc88afff9ec11b344db2d69954477e)
 
 - [x] **Task 5: Create report**
   - **Status:** Pending...

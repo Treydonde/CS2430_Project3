@@ -39,14 +39,14 @@ TBD
   - **Assigned To:** Alain
   - **Evidence:** GitHub repository initialized
 
-- [x] **Task 2: UML file **
+- [x] **Task 2: UML file**
   - **Status:** Working
   - **Assigned To:** Ben
   - **Evidence:** Commit ()
     
-- [x] **Task 3: Implement part 1**
+- [x] **Task 3: Implement Greedy Strategies**
   - **Status:** Working
-  - **Assigned To:** Everyone
+  - **Assigned To:** Alain,Ben, Jose
   - **Evidence:** File: src/main.py
      
 - [x] **Task 4: Brute Force Method**

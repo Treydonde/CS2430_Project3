@@ -1,8 +1,9 @@
-#Part 1
-Implementation Lead/s: Jose, Gustavo
-Verification Lead: Ben
-Communication Lead: Alain
+## Team Structure and Role Assignments
+-**Implementation Lead/s:** Jose, Gustavo
+-**Verification Lead:** Ben
+-**Communication Lead:** Alain
 
+#Part 1
 |Task|Owner|Evidence|
 |-|-|-|
 |Highest Rating First|Alain|https://github.com/Treydonde/CS2430_Project3/commit/147a70acd47990e7ab2b9551d984d1ce00a83a88|

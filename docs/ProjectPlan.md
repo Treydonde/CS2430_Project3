@@ -47,11 +47,11 @@ TBD
 - [x] **Task 2.5: Pseudo-Code**
   - **Status:** Working
   - **Assigned To:** Gustavo
-  - **Evidence:** Commit ()
+  - **Evidence:** Commit (docs/Pseudo-Code.md)
     
 - [x] **Task 3: Implement Greedy Strategies**
   - **Status:** Working
-  - **Assigned To:** Alain,Ben, Jose
+  - **Assigned To:** Alain[x],Ben[x], Jose[]
   - **Evidence:** File: src/main.py
      
 - [x] **Task 4: Brute Force Method**

@@ -30,12 +30,17 @@ def greedy_pack(experiments, capacity, sort_key):
             chosen.append((name, weight,rating))
             total_weight += weight
             total_rating += rating
-        return chosen, total_weight, total_rating
+
+    return chosen, total_weight, total_rating
 
     
 def highest_rating_first(experiments, capacity=CAPACITY):
-    # Showing the higest rating first with ties being broken by the lighther weight
+    # Showing the highest rating first with ties being broken by the lighter weight
     return greedy_pack(experiments, capacity, sort_key=lambda e: (-e[2], e[1]))
+
+def lightest_first(experiments, capacity=CAPACITY):
+    # Select experiments starting with the lightest ones then sorting by weight in ascending order.
+    return greedy_pack(experiments, capacity, sort_key=lambda e: e[1])
 
 def brute_force(experiments):
     top_three = []

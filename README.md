@@ -18,12 +18,12 @@ It then keeps adding items in that each those respective rules so long as they f
 ## Brute Forcing
 This checks all 4096 possible subsets, guaranteeing us to find the true optimum. This brute force strategy acts as the most definitive answer that can be used to compare/grade the greedy results against. 
 
-## Comparison
+# Comparison
 The main part of the project after implementing the greedy strategies and brute force method. Showing us which greedy rules landed the closest to the optimum and which ones fell short.
 
 
 
-## Project Structure
+# Project Structure
 
 ```text
 CS2430_Project3/
@@ -37,3 +37,36 @@ CS2430_Project3/
 └── .gitignore
 └── README.md
 ```
+
+## Requirements
+
+- Python 3.10 or newer recommended.
+- No third-party Python packages are required.
+
+## How to Run
+
+Clone or download the repository and open a terminal in the project root directory.
+
+### Run the demonstration
+
+```bash
+python main.py
+```
+
+### Run the test driver
+
+```bash
+python src/project_driver.py
+```
+
+The test driver checks the results of the implemented operations against predefined expected results.
+
+## Testing Results
+
+The test driver was executed with the following result:
+
+```text
+
+```
+
+## Learning Objectives

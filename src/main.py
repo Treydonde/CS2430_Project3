@@ -1,7 +1,9 @@
+## List: Item Name, Weight, Rating.
+import itertools
+import heapq
+
 CAPACITY = 700
 
-
-## List: Item Name, Weight, Rating.
 EXPERIMENTS = [
     ("Cloud Patterns", 36, 5),
     ("Solar Flares", 264, 9),
@@ -60,6 +62,54 @@ def best_rating_to_weight_ratio(experiments, capacity):
     return picked_experiments
 
 
+def greedy_pack(experiments, capacity, sort_key):
+    """Go through experiments in sort_key order, adding each one or anything that still fits
+    This is essentially the greedy algorithm, because we are sorting by sort_key order which sets
+    the priority order, walks through that order, does it know it's ideal? No, but it should be fast and simple
+    """
+    chosen = []
+    total_weight = 0
+    total_rating = 0
+    for name, weight, rating in sorted(experiments, key=sort_key):
+        if total_weight + weight <= capacity:
+            chosen.append((name, weight,rating))
+            total_weight += weight
+            total_rating += rating
+
+    return chosen, total_weight, total_rating
+
+    
+def highest_rating_first(experiments, capacity=CAPACITY):
+    # Showing the highest rating first with ties being broken by the lighter weight
+    return greedy_pack(experiments, capacity, sort_key=lambda e: (-e[2], e[1]))
+
+def lightest_first(experiments, capacity=CAPACITY):
+    # Select experiments starting with the lightest ones then sorting by weight in ascending order.
+    return greedy_pack(experiments, capacity, sort_key=lambda e: e[1])
+
+def brute_force(experiments):
+    top_three = []
+    num_results = 3 # used to limit result list to just 3 values
+
+    # start at 1 to ignore starting empty combination
+    for r in range(1, len(experiments) + 1):
+        #generates all combinations of experiments of length r
+        for subset in itertools.combinations(experiments, r):
+            weight = sum(exp[1] for exp in subset)
+            if weight > CAPACITY:
+                continue
+
+            total_rating = sum(exp[2] for exp in subset)
+
+            # pushes a tuple of the summed rating of the subset and the subset
+            # onto a heap while retaining sorting
+            # keeping the sort while pushing and then popping if len > 3
+            #gives us the top 3 best
+            heapq.heappush(top_three, (total_rating, subset))
+            if len(top_three) > num_results:
+                heapq.heappop(top_three)
+
+    return sorted(top_three, reverse=True)
 
 if __name__ == "__main__":
     main()

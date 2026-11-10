@@ -8,7 +8,7 @@
 |-|-|-|
 |Highest Rating First|Alain|https://github.com/Treydonde/CS2430_Project3/commit/147a70acd47990e7ab2b9551d984d1ce00a83a88|
 |Lightest Rating First|Jose||
-|Best Rating to Weight Ration|Ben||
+|Best Rating to Weight Ration|Ben|[3cc1531](https://github.com/Treydonde/CS2430_Project3/commit/3cc1531f2930e39e22ebcbaddc10afea25c23a7d)|
 
 
 

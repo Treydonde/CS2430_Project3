@@ -15,51 +15,13 @@ EXPERIMENTS = [
     ("Microgravity Plant Growth", 75, 5),
     ("Micrometeorites", 170, 9),
     ("Cosmic Rays", 80, 7),
-    ("Cosmic Rays", 10, 5, ),
+    ("Cosmic Rays", 10, 5,),
     ("Yeast Fermentation", 27, 4),
 ]
 
 def main():
     print("This is the best rating to weight:")
     for item in best_rating_to_weight_ratio(EXPERIMENTS, CAPACITY): print(item)
-
-
-# best_rating_to_weight_ratio gets the best rating to weight ratio of the
-# given experiments and capacity.  The experiments are given as an array
-# of tuples and the capacity they are laid out as follows:
-# experiment: (experiment_name, weight, rating)...
-# capacity: int
-#
-# @param experiments
-# @param capacity
-# @return picked_experiments
-# @author Benjamin Shaw
-def best_rating_to_weight_ratio(experiments, capacity):
-
-    # Gets best rating to weight of the experiments
-    best_rating_to_weight = [(rating / weight) for item_name, weight, rating in experiments]
-
-    # sorts the best rating to weight experiments
-    sorted_best_rating_to_weight, sorted_experiments = (
-        zip(*sorted(zip(
-            best_rating_to_weight, experiments.copy()), reverse=True)))
-
-
-    # Both of these variables are being initialized before we run the for loop to
-    # get the best rating to weight for the experiments
-    total_weight = 0
-    picked_experiments = []
-
-
-    # This for loop iterates through all the sorted experiments to pick the best
-    # experiments to have the best rating to weight ratio
-    for item, weight, rating in sorted_experiments:
-
-        if total_weight + weight <= capacity:
-            picked_experiments.append((item, weight, rating))
-            total_weight += weight
-
-    return picked_experiments
 
 
 def greedy_pack(experiments, capacity, sort_key):
@@ -83,11 +45,27 @@ def highest_rating_first(experiments, capacity=CAPACITY):
     # Showing the highest rating first with ties being broken by the lighter weight
     return greedy_pack(experiments, capacity, sort_key=lambda e: (-e[2], e[1]))
 
+# best_rating_to_weight_ratio gets the best rating to weight ratio of the
+# given experiments and capacity.  The experiments are given as an array
+# of tuples and the capacity they are laid out as follows:
+# experiment: (experiment_name, weight, rating)...
+# capacity: int
+#
+# @param experiments
+# @param capacity
+# @return picked_experiments
+# @author Benjamin Shaw
+def best_rating_to_weight_ratio(experiments, capacity=CAPACITY):
+
+    # Gets best rating to weight of the experiments rating/weight first, ties broken by higher rating
+ 
+    return greedy_pack(experiments, capacity, sort_key=lambda e:(-e[2]/e[1], -e[2]))
+
 def lightest_first(experiments, capacity=CAPACITY):
     # Select experiments starting with the lightest ones then sorting by weight in ascending order.
     return greedy_pack(experiments, capacity, sort_key=lambda e: e[1])
 
-def brute_force(experiments):
+def brute_force(experiments, capacity=CAPACITY):
     top_three = []
     num_results = 3 # used to limit result list to just 3 values
 
@@ -96,7 +74,7 @@ def brute_force(experiments):
         #generates all combinations of experiments of length r
         for subset in itertools.combinations(experiments, r):
             weight = sum(exp[1] for exp in subset)
-            if weight > CAPACITY:
+            if weight > capacity:
                 continue
 
             total_rating = sum(exp[2] for exp in subset)

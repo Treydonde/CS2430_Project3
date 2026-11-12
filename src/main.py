@@ -48,6 +48,7 @@ def highest_rating_first(experiments, capacity=CAPACITY):
 # best_rating_to_weight_ratio gets the best rating to weight ratio of the
 # given experiments and capacity.  The experiments are given as an array
 # of tuples and the capacity they are laid out as follows:
+#
 # experiment: (experiment_name, weight, rating)...
 # capacity: int
 #

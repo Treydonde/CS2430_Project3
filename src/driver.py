@@ -40,7 +40,7 @@ def main():
         for item, weight, rating in items:
             print(f"{item:<30} {weight:<10} {rating:<10}")
 
-        # printing the weight and rating of the greety strategies payloads
+        # printing the weight and rating of the greedy strategies payloads
         print(f"\nLoad Weight: {load_weight:<17} Load Rating: {load_rating}")
         print(f"\n")
 
@@ -52,11 +52,12 @@ def main():
     print(f"\n---------- Part 2 Brute Force ----------------------------------------------")
 
     # printing the experiments of brute force
-    for load_rating, items in brute_force(EXPERIMENTS, CAPACITY):
+    for rank, (load_rating, items) in enumerate(brute_force(EXPERIMENTS, CAPACITY), start=1):
       
-        weight_of_brue_force = 0
+        weight_of_brute_force = 0
 
         print("\n\n-------------------------------------------------")
+        print(f"#{rank}" + ("  <-- OPTIMAL" if rank == 1 else ""))
         print(f"{"Item Name":<30} {"Weight":<10} {"Rating":<10}")
         print("-------------------------------------------------")
 
@@ -64,11 +65,11 @@ def main():
         for item, weight, rating in items:
             print(f"{item:<30} {weight:<10} {rating:<10}")
 
-            # getting the total weigh of the brute force experiments
-            weight_of_brue_force += weight
+            # getting the total weight of the brute force experiments
+            weight_of_brute_force += weight
 
         # printing the weight and rating of the brute force payloads
-        print(f"\nLoad Weight: {weight_of_brue_force:<17} Load Rating: {load_rating}")
+        print(f"\nLoad Weight: {weight_of_brute_force:<17} Load Rating: {load_rating}")
 
     print(f"\n---------- Part 3 Comparison Summary ----------------------------------------")
 

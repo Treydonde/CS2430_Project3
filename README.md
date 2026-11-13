@@ -28,7 +28,7 @@ The main part of the project after implementing the greedy strategies and brute 
 ```text
 CS2430_Project3/
 ├── src/
-│   ├── project_driver.py
+│   ├── driver.py
 │   └── main.py
 ├── docs/
 │   ├── Blank diagram (1).png
@@ -56,7 +56,7 @@ python main.py
 ### Run the test driver
 
 ```bash
-python src/project_driver.py
+python driver.py
 ```
 
 The test driver checks the results of the implemented operations against predefined expected results.

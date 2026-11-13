@@ -51,10 +51,10 @@ def main():
 
     print(f"\n---------- Part 2 Brute Force ----------------------------------------------")
 
-    weight_of_brue_force = 0
-
     # printing the experiments of brute force
     for load_rating, items in brute_force(EXPERIMENTS, CAPACITY):
+      
+        weight_of_brue_force = 0
 
         print("\n\n-------------------------------------------------")
         print(f"{"Item Name":<30} {"Weight":<10} {"Rating":<10}")

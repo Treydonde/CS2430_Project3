@@ -7,7 +7,7 @@
 |Task|Owner|Evidence|
 |-|-|-|
 |Highest Rating First|Alain|https://github.com/Treydonde/CS2430_Project3/commit/147a70acd47990e7ab2b9551d984d1ce00a83a88|
-|Lightest Rating First|Jose||
+|Lightest Rating First|Jose|5da0d1489a26150ca926ba8c767b1e61cc4c1219|
 |Best Rating to Weight Ration|Ben|[3cc1531](https://github.com/Treydonde/CS2430_Project3/commit/3cc1531f2930e39e22ebcbaddc10afea25c23a7d)|
 
 
@@ -22,7 +22,6 @@
 
 #Part 3 
 Change Request
-TBD
 |Task|Owner|Evidence|
 |-|-|-|
 |-|-|-|
@@ -35,23 +34,23 @@ TBD
 ## Milestone Checklist
 
 - [x] **Task 1: Repository Setup & Workflow**
-  - **Status:** Done
+  - **Status:** Completed
   - **Assigned To:** Alain
   - **Evidence:** GitHub repository initialized
 
 - [x] **Task 2: UML file**
-  - **Status:** Working
+  - **Status:** Completed
   - **Assigned To:** Ben
-  - **Evidence:** Commit ()
+  - **Evidence:** docs/Blank diagram(1).png
      
 - [x] **Task 2.5: Pseudo-Code**
-  - **Status:** Working
+  - **Status:** Completed
   - **Assigned To:** Gustavo
-  - **Evidence:** Commit (docs/Pseudo-Code.md)
+  - **Evidence:** docs/Pseudo-Code.md
     
 - [x] **Task 3: Implement Greedy Strategies**
-  - **Status:** Working
-  - **Assigned To:** Alain[x],Ben[x], Jose[]
+  - **Status:** Completed
+  - **Assigned To:** Alain[x],Ben[x], Jose[x]
   - **Evidence:** File: src/main.py
      
 - [x] **Task 4: Brute Force Method**
@@ -60,18 +59,18 @@ TBD
   - **Evidence:** [Commit 2179cdb](https://github.com/Treydonde/CS2430_Project3/commit/2179cdbe86cc88afff9ec11b344db2d69954477e)
 
 - [x] **Task 5: Create report**
-  - **Status:** Pending...
+  - **Status:** Completed
   - **Assigned To:** Alain
-  - **Evidence:** N/A
+  - **Evidence:** [N/A](https://docs.google.com/document/d/1-3moUyzeZkusukepV6V-N4rgvNxktz-3jdHxdIc3Isc/edit?tab=t.0)
 
 - [x] **Task 6: Create video**
-  - **Status:** Pending...
+  - **Status:** In Progress...
   - **Assigned To:** All
   - **Evidence:** N/A
      
 - [] **Task 7: Gather all submission documents required**
-  - **Status:** Pending...
-  - **Assigned To:** Unknown
+  - **Status:** In Progress...
+  - **Assigned To:** Alain
   - **Evidence:** N/A
 
 

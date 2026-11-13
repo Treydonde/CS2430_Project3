@@ -51,9 +51,10 @@ def main():
 
     print(f"\n---------- Part 2 Brute Force ----------------------------------------------")
 
+
     # printing the experiments of brute force
     for rank, (load_rating, items) in enumerate(brute_force(EXPERIMENTS, CAPACITY), start=1):
-      
+        
         weight_of_brute_force = 0
 
         print("\n\n-------------------------------------------------")
@@ -65,7 +66,7 @@ def main():
         for item, weight, rating in items:
             print(f"{item:<30} {weight:<10} {rating:<10}")
 
-            # getting the total weight of the brute force experiments
+            # getting the total weigh of the brute force experiments
             weight_of_brute_force += weight
 
         # printing the weight and rating of the brute force payloads
@@ -101,9 +102,17 @@ def main():
     print(f"{"Brute Force Optimal":<30} {brute_force_optimal_weight:<10} {brute_force_optimal_rating:<10} {"-"}")
 
     # printing the summary
+    results = (highest_rating_first(EXPERIMENTS, CAPACITY),
+                  lightest_first(EXPERIMENTS, CAPACITY),
+                  best_rating_to_weight_ratio(EXPERIMENTS, CAPACITY))
+    matched = [names[k] for k, r in enumerate(results) if r[2] == brute_force_optimal_rating]
+    missed  = [names[k] for k, r in enumerate(results) if r[2] != brute_force_optimal_rating]
+
     print("\nSummary:")
     print(f"  The optimal payload has a total rating of {brute_force_optimal_rating} "
-          f"at {brute_force_optimal_weight} kg.")
+             f"at {brute_force_optimal_weight} kg.")
+    print(f"  Matched the optimal: {', '.join(matched) or 'none'}")
+    print(f"  Missed the optimal:  {', '.join(missed) or 'none'}")
 
 if __name__ == "__main__":
     main()

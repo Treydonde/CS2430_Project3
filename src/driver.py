@@ -40,7 +40,7 @@ def main():
         for item, weight, rating in items:
             print(f"{item:<30} {weight:<10} {rating:<10}")
 
-        # printing the weight and rating of the greety strategies payloads
+        # printing the weight and rating of the greedy strategies payloads
         print(f"\nLoad Weight: {load_weight:<17} Load Rating: {load_rating}")
         print(f"\n")
 

@@ -51,12 +51,14 @@ def main():
 
     print(f"\n---------- Part 2 Brute Force ----------------------------------------------")
 
-    weight_of_brue_force = 0
 
     # printing the experiments of brute force
-    for load_rating, items in brute_force(EXPERIMENTS, CAPACITY):
+    for rank, (load_rating, items) in enumerate(brute_force(EXPERIMENTS, CAPACITY), start=1):
+        
+        weight_of_brute_force = 0
 
         print("\n\n-------------------------------------------------")
+        print(f"#{rank}" + ("  <-- OPTIMAL" if rank == 1 else ""))
         print(f"{"Item Name":<30} {"Weight":<10} {"Rating":<10}")
         print("-------------------------------------------------")
 
@@ -65,10 +67,10 @@ def main():
             print(f"{item:<30} {weight:<10} {rating:<10}")
 
             # getting the total weigh of the brute force experiments
-            weight_of_brue_force += weight
+            weight_of_brute_force += weight
 
         # printing the weight and rating of the brute force payloads
-        print(f"\nLoad Weight: {weight_of_brue_force:<17} Load Rating: {load_rating}")
+        print(f"\nLoad Weight: {weight_of_brute_force:<17} Load Rating: {load_rating}")
 
     print(f"\n---------- Part 3 Comparison Summary ----------------------------------------")
 
@@ -100,9 +102,17 @@ def main():
     print(f"{"Brute Force Optimal":<30} {brute_force_optimal_weight:<10} {brute_force_optimal_rating:<10} {"-"}")
 
     # printing the summary
+    results = (highest_rating_first(EXPERIMENTS, CAPACITY),
+                  lightest_first(EXPERIMENTS, CAPACITY),
+                  best_rating_to_weight_ratio(EXPERIMENTS, CAPACITY))
+    matched = [names[k] for k, r in enumerate(results) if r[2] == brute_force_optimal_rating]
+    missed  = [names[k] for k, r in enumerate(results) if r[2] != brute_force_optimal_rating]
+
     print("\nSummary:")
     print(f"  The optimal payload has a total rating of {brute_force_optimal_rating} "
-          f"at {brute_force_optimal_weight} kg.")
+             f"at {brute_force_optimal_weight} kg.")
+    print(f"  Matched the optimal: {', '.join(matched) or 'none'}")
+    print(f"  Missed the optimal:  {', '.join(missed) or 'none'}")
 
 if __name__ == "__main__":
     main()

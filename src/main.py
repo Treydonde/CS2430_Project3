@@ -9,6 +9,7 @@ EXPERIMENTS = [
     ("Solar Flares", 264, 9),
     ("Solar Power", 188, 6),
     ("Binary Stars", 203, 8),
+    ("Relativity", 104, 8),
     ("Seed Viability", 7, 4),
     ("Sun Spots", 90, 2),
     ("Mice Tumors", 65, 8),
@@ -66,6 +67,11 @@ def lightest_first(experiments, capacity=CAPACITY):
     # Select experiments starting with the lightest ones then sorting by weight in ascending order.
     return greedy_pack(experiments, capacity, sort_key=lambda e: e[1])
 
+# Brute force function
+# Generates the powerset of EXPERIMENTS, calculates the weight and sum
+# for every generated subset. Ignores the subset if the weight is > WEIGHT
+# If the weight is < WEIGHT it uses heappush to keep track of the highest rating
+#
 def brute_force(experiments, capacity=CAPACITY):
     top_three = []
     num_results = 3 # used to limit result list to just 3 values
@@ -74,7 +80,19 @@ def brute_force(experiments, capacity=CAPACITY):
     for r in range(1, len(experiments) + 1):
         #generates all combinations of experiments of length r
         for subset in itertools.combinations(experiments, r):
+            has_solar_flare = any(experiment[0] == "Solar Flares" for experiment in subset)
+            has_solar_power = any(experiment[0] == "Solar Power" for experiment in subset)
+            has_sun_spots = any(experiment[0] == "Sun Spots" for experiment in subset)
+            has_seed_viability = any(experiment[0] == "Seed Viability" for experiment in subset)
+            has_yeast_fermentation = any(experiment[0] == "Yeast Fermentation" for experiment in subset)
+
+            #Checks if for forbidden combination "Shared Solar Instruments Hardware Contention"
+            if has_solar_flare and has_solar_power and has_sun_spots:
+                continue
+
             weight = sum(exp[1] for exp in subset)
+            if has_seed_viability and has_yeast_fermentation:
+                weight = weight - 7
             if weight > capacity:
                 continue
 

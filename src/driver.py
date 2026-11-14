@@ -54,7 +54,9 @@ def main():
 
     # printing the experiments of brute force
     for rank, (load_rating, items) in enumerate(brute_force(EXPERIMENTS, CAPACITY), start=1):
-        
+        has_seed_viability = any(experiment[0] == "Seed Viability" for experiment in items)
+        has_yeast_fermentation = any(experiment[0] == "Yeast Fermentation" for experiment in items)
+
         weight_of_brute_force = 0
 
         print("\n\n-------------------------------------------------")
@@ -71,6 +73,8 @@ def main():
 
         # printing the weight and rating of the brute force payloads
         print(f"\nLoad Weight: {weight_of_brute_force:<17} Load Rating: {load_rating}")
+        if has_seed_viability and has_yeast_fermentation:
+            print(f"Adjusted weight: {weight_of_brute_force-7:<17}")
 
     print(f"\n---------- Part 3 Comparison Summary ----------------------------------------")
 

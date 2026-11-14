@@ -9,6 +9,7 @@ EXPERIMENTS = [
     ("Solar Flares", 264, 9),
     ("Solar Power", 188, 6),
     ("Binary Stars", 203, 8),
+    ("Relativity", 104, 8),
     ("Seed Viability", 7, 4),
     ("Sun Spots", 90, 2),
     ("Mice Tumors", 65, 8),
@@ -66,6 +67,11 @@ def lightest_first(experiments, capacity=CAPACITY):
     # Select experiments starting with the lightest ones then sorting by weight in ascending order.
     return greedy_pack(experiments, capacity, sort_key=lambda e: e[1])
 
+# Brute force function
+# Generates the powerset of EXPERIMENTS, calculates the weight and sum
+# for every generated subset. Ignores the subset if the weight is > WEIGHT
+# If the weight is < WEIGHT it uses heappush to keep track of the highest rating
+#
 def brute_force(experiments, capacity=CAPACITY):
     top_three = []
     num_results = 3 # used to limit result list to just 3 values

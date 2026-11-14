@@ -80,7 +80,19 @@ def brute_force(experiments, capacity=CAPACITY):
     for r in range(1, len(experiments) + 1):
         #generates all combinations of experiments of length r
         for subset in itertools.combinations(experiments, r):
+            has_solar_flare = any(experiment[0] == "Solar Flares" for experiment in subset)
+            has_solar_power = any(experiment[0] == "Solar Power" for experiment in subset)
+            has_sun_spots = any(experiment[0] == "Sun Spots" for experiment in subset)
+            has_seed_viability = any(experiment[0] == "Seed Viability" for experiment in subset)
+            has_yeast_fermentation = any(experiment[0] == "Yeast Fermentation" for experiment in subset)
+
+            #Checks if for forbidden combination "Shared Solar Instruments Hardware Contention"
+            if has_solar_flare and has_solar_power and has_sun_spots:
+                continue
+
             weight = sum(exp[1] for exp in subset)
+            if has_seed_viability and has_yeast_fermentation:
+                weight = weight - 7
             if weight > capacity:
                 continue
 

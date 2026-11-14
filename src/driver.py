@@ -58,6 +58,7 @@ def main():
         has_yeast_fermentation = any(experiment[0] == "Yeast Fermentation" for experiment in items)
 
         weight_of_brute_force = 0
+        adjusted_weight = 0
 
         print("\n\n-------------------------------------------------")
         print(f"#{rank}" + ("  <-- OPTIMAL" if rank == 1 else ""))
@@ -71,10 +72,15 @@ def main():
             # getting the total weigh of the brute force experiments
             weight_of_brute_force += weight
 
+        # checking if weight adjustment exp. are present
+        # if they are calculate the adjusted weight
+        if has_seed_viability and has_yeast_fermentation:
+            adjusted_weight = weight_of_brute_force - 7
+
         # printing the weight and rating of the brute force payloads
         print(f"\nLoad Weight: {weight_of_brute_force:<17} Load Rating: {load_rating}")
-        if has_seed_viability and has_yeast_fermentation:
-            print(f"Adjusted weight: {weight_of_brute_force-7:<17}")
+        if adjusted_weight != 0:
+            print(f"Adjusted weight: {adjusted_weight:<17}")
 
     print(f"\n---------- Part 3 Comparison Summary ----------------------------------------")
 
